@@ -1,15 +1,22 @@
-import React from 'react';
-const FomcHeader = React.lazy(() => import('fomcapp/Header'));
-const FomcSidebar = React.lazy(() => import('fomcapp/Sidebar'));
+// noprotect
+import React, { Suspense } from 'react';
+import Loader from 'fomcapp/Loader';
 
-// import FomcHeader from 'fomcapp/Header';
+// const FomcHeader = React.lazy(() => import('fomcapp/Header'));
+// const FomcSidebar = React.lazy(() => import('fomcapp/Sidebar'));
+const Table = React.lazy(() => import('customers/Table'));
+
 // import FomcSidebar from 'fomcapp/Sidebar';
+// import CustomersTable from 'customers/Table'
 
 const App = ({ title }) =>
-  <div>
-    <FomcHeader />
-    <FomcSidebar />
-    <h1>{title}</h1>
-  </div>;
+  <Suspense fallback={<Loader />}>
+    <div>
+      {/* <FomcHeader /> */}
+      {/* <FomcSidebar /> */}
+      <Table />
+      <h1>{title} test</h1>
+    </div>
+  </Suspense>
 
 export default App;

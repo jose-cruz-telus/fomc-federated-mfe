@@ -1,7 +1,10 @@
 import React from 'react';
 
-const FomcHeader = () => <header>
-  header goes here
-</header>
+
+const FomcHeader = () => (
+  <header>
+   I am the header!!!!!
+  </header>
+);
 
 export default FomcHeader;

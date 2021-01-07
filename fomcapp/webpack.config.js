@@ -1,7 +1,8 @@
 const webpack = require('webpack');
-// const deps = require("./package.json").dependencies;
+const deps = require("./package.json").dependencies;
 const { ModuleFederationPlugin } = require('webpack').container;
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const DashboardPlugin = require("@module-federation/dashboard-plugin");
 const path = require("path");
 
 module.exports = {
@@ -35,42 +36,55 @@ module.exports = {
       library: { type: 'var', name: 'fomcapp' },
       filename: 'remoteEntry.js',
       remotes: {
-        fomcapp: "fomcapp",
-        customers: "customers"
-        // order: "orders",
-        // tasks: "tasks"
+        fomcapp: "fomcapphttp://localhost:3003/remoteEntry.js",
+        customers: "customers@http://localhost:3000/remoteEntry.js",
+        orders: "orders@http://localhost:3001/remoteEntry.js",
+        tasks: "tasks@http://localhost:3002/remoteEntry.js",
       },
       exposes: {
-        "./Header": "./src/Header.jsx",
-        "./Sidebar": "./src/Sidebar.jsx"
+        // "./Header": "./src/Header.jsx",
+        // "./Sidebar": "./src/Sidebar.jsx",
+        './Dashboard': './src/Dashboard.jsx',
+        './Loader': './src/loader.jsx',
       },
-      shared: ["react", "react-dom"]
-      // shared: {
-      //   ...deps,
-      //   react: {
-      //     eager: true,
-      //     singleton: true,
-      //     requiredVersion: deps.react,
+      // shared: ["react", "react-dom"]
+      shared: {
+        ...deps,
+        react: {
+          // eager: true,
+          singleton: true,
+          requiredVersion: deps.react,
+        },
+        "react-dom": {
+          // eager: true,
+          singleton: true,
+          requiredVersion: deps["react-dom"],
+        }
+      }
+    }),
+    new DashboardPlugin({
+      dashboardURL: "http://localhost:8000/api/update",
+      // metadata: {
+      //   source: {
+      //     url: "http://github.com",
       //   },
-      //   "react-dom": {
-      //     eager: true,
-      //     singleton: true,
-      //     requiredVersion: deps["react-dom"],
-      //   }
-      // }
-    })
+      //   remote: "http://localhost:3003/remoteEntry.js",
+      // },
+    }),  
   ],
   devServer: {
     contentBase: path.resolve(__dirname, './dist'),
     port: 3003,
+    historyApiFallback: true,
     open: true,
-    hot: true,
+    // hot: true,
   },
+  // entry: [path.join(__dirname, "src", "bootstrap.js")],
   output: {
-    // path: path.resolve(__dirname, "build"),
+    path: path.resolve(__dirname, "dist"),
     publicPath: "http://localhost:3003/"
   },
   optimization: {
     minimize: false
-  }
+  },
 };

@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const deps = require("./package.json").dependencies;
 const { ModuleFederationPlugin } = require('webpack').container;
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const DashboardPlugin = require("@module-federation/dashboard-plugin");
 const path = require("path");
 
 module.exports = {
@@ -36,27 +37,37 @@ module.exports = {
       filename: 'remoteEntry.js',
       remotes: {
         fomcapp: "fomcapp",
-        customers: "customers"
-        // order: "orders",
-        // tasks: "tasks"
+        customers: "customers",
+        orders: "orders",
+        tasks: "tasks",
       },
       exposes: {
-        './CustomersTable': './src/CustomersTable.jsx'
+        './CustomersSearch': './src/app',
+        './Table': './src/CustomersTable.jsx',
       },
       shared: {
         ...deps,
         react: {
-          eager: true,
+          // eager: true,
           singleton: true,
           requiredVersion: deps.react,
         },
         "react-dom": {
-          eager: true,
+          // eager: true,
           singleton: true,
           requiredVersion: deps["react-dom"],
         }
       }
-    })
+    }),
+    new DashboardPlugin({
+      dashboardURL: "http://localhost:8000/api/update",
+      // metadata: {
+      //   source: {
+      //     url: "http://github.com",
+      //   },
+      //   remote: "http://localhost:3000/remoteEntry.js",
+      // },
+    }),
   ],
   devServer: {
     contentBase: path.resolve(__dirname, './dist'),
@@ -64,11 +75,12 @@ module.exports = {
     open: true,
     hot: true,
   },
+  // entry: [path.join(__dirname, "src", "bootstrap.js")],
   output: {
-    // path: path.resolve(__dirname, "build"),
+    path: path.resolve(__dirname, "dist"),
     publicPath: "http://localhost:3000/"
   },
   optimization: {
     minimize: false
-  }
+  },
 };
