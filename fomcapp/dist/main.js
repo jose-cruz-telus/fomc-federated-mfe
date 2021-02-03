@@ -19,47 +19,36 @@ eval("Promise.all(/*! import() */[__webpack_require__.e(\"webpack_sharing_consum
 
 /***/ }),
 
-/***/ "webpack/container/reference/customers":
-/*!*****************************************************************!*\
-  !*** external "customers@http://localhost:3000/remoteEntry.js" ***!
-  \*****************************************************************/
-/***/ ((module) => {
-
-"use strict";
-eval("module.exports = customers@http://localhost:3000/remoteEntry.js;\n\n//# sourceURL=webpack://fomcapp/external_%22customers@http://localhost:3000/remoteEntry.js%22?");
-
-/***/ }),
-
 /***/ "webpack/container/reference/fomcapp":
-/*!**************************************************************!*\
-  !*** external "fomcapphttp://localhost:3003/remoteEntry.js" ***!
-  \**************************************************************/
+/*!**************************!*\
+  !*** external "fomcapp" ***!
+  \**************************/
 /***/ ((module) => {
 
 "use strict";
-eval("module.exports = fomcapphttp://localhost:3003/remoteEntry.js;\n\n//# sourceURL=webpack://fomcapp/external_%22fomcapphttp://localhost:3003/remoteEntry.js%22?");
+eval("module.exports = fomcapp;\n\n//# sourceURL=webpack://fomcapp/external_%22fomcapp%22?");
 
 /***/ }),
 
 /***/ "webpack/container/reference/orders":
-/*!**************************************************************!*\
-  !*** external "orders@http://localhost:3001/remoteEntry.js" ***!
-  \**************************************************************/
+/*!*************************!*\
+  !*** external "orders" ***!
+  \*************************/
 /***/ ((module) => {
 
 "use strict";
-eval("module.exports = orders@http://localhost:3001/remoteEntry.js;\n\n//# sourceURL=webpack://fomcapp/external_%22orders@http://localhost:3001/remoteEntry.js%22?");
+eval("module.exports = orders;\n\n//# sourceURL=webpack://fomcapp/external_%22orders%22?");
 
 /***/ }),
 
 /***/ "webpack/container/reference/tasks":
-/*!*************************************************************!*\
-  !*** external "tasks@http://localhost:3002/remoteEntry.js" ***!
-  \*************************************************************/
+/*!************************!*\
+  !*** external "tasks" ***!
+  \************************/
 /***/ ((module) => {
 
 "use strict";
-eval("module.exports = tasks@http://localhost:3002/remoteEntry.js;\n\n//# sourceURL=webpack://fomcapp/external_%22tasks@http://localhost:3002/remoteEntry.js%22?");
+eval("module.exports = tasks;\n\n//# sourceURL=webpack://fomcapp/external_%22tasks%22?");
 
 /***/ })
 
@@ -196,7 +185,7 @@ eval("module.exports = tasks@http://localhost:3002/remoteEntry.js;\n\n//# source
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => "4ec6dee38729bcd32978"
+/******/ 		__webpack_require__.h = () => "5820e14c0563978a8e8d"
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
@@ -297,9 +286,6 @@ eval("module.exports = tasks@http://localhost:3002/remoteEntry.js;\n\n//# source
 /******/ 			"webpack_container_remote_fomcapp_Dashboard": [
 /******/ 				"webpack/container/remote/fomcapp/Dashboard"
 /******/ 			],
-/******/ 			"webpack_container_remote_customers_CustomersSearch": [
-/******/ 				"webpack/container/remote/customers/CustomersSearch"
-/******/ 			],
 /******/ 			"webpack_container_remote_orders_OrdersSearch": [
 /******/ 				"webpack/container/remote/orders/OrdersSearch"
 /******/ 			],
@@ -317,11 +303,6 @@ eval("module.exports = tasks@http://localhost:3002/remoteEntry.js;\n\n//# source
 /******/ 				"default",
 /******/ 				"./Dashboard",
 /******/ 				"webpack/container/reference/fomcapp"
-/******/ 			],
-/******/ 			"webpack/container/remote/customers/CustomersSearch": [
-/******/ 				"default",
-/******/ 				"./CustomersSearch",
-/******/ 				"webpack/container/reference/customers"
 /******/ 			],
 /******/ 			"webpack/container/remote/orders/OrdersSearch": [
 /******/ 				"default",
@@ -423,7 +404,6 @@ eval("module.exports = tasks@http://localhost:3002/remoteEntry.js;\n\n//# source
 /******/ 					register("react-router-dom", "5.2.0", () => Promise.all([__webpack_require__.e("vendors-node_modules_babel_runtime_helpers_esm_extends_js-node_modules_babel_runtime_helpers_-e477a1"), __webpack_require__.e("vendors-node_modules_react-router-dom_esm_react-router-dom_js"), __webpack_require__.e("webpack_sharing_consume_default_react_react")]).then(() => () => __webpack_require__(/*! ./node_modules/react-router-dom/esm/react-router-dom.js */ "./node_modules/react-router-dom/esm/react-router-dom.js")));
 /******/ 					register("react", "17.0.1", () => __webpack_require__.e("vendors-node_modules_react_index_js").then(() => () => __webpack_require__(/*! ./node_modules/react/index.js */ "./node_modules/react/index.js")));
 /******/ 					initExternal("webpack/container/reference/fomcapp");
-/******/ 					initExternal("webpack/container/reference/customers");
 /******/ 					initExternal("webpack/container/reference/orders");
 /******/ 					initExternal("webpack/container/reference/tasks");
 /******/ 				}
@@ -991,7 +971,7 @@ eval("module.exports = tasks@http://localhost:3002/remoteEntry.js;\n\n//# source
 /******/ 					if(installedChunkData) {
 /******/ 						promises.push(installedChunkData[2]);
 /******/ 					} else {
-/******/ 						if(!/^webpack_(container_remote_(((customers_Custom|orders_Ord)er|tasks_Task)sSearch|fomcapp_Dashboard)|sharing_consume_default_react(\-dom_react\-dom|_react))$/.test(chunkId)) {
+/******/ 						if(!/^webpack_(container_remote_((orders_Order|tasks_Task)sSearch|fomcapp_Dashboard)|sharing_consume_default_react(\-dom_react\-dom|_react))$/.test(chunkId)) {
 /******/ 							// setup Promise in chunk cache
 /******/ 							var promise = new Promise((resolve, reject) => {
 /******/ 								installedChunkData = installedChunks[chunkId] = [resolve, reject];

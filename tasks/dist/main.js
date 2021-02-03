@@ -15,18 +15,7 @@
   \**********************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("Promise.all(/*! import() */[__webpack_require__.e(\"webpack_sharing_consume_default_react_react\"), __webpack_require__.e(\"webpack_sharing_consume_default_reduxjs_toolkit_reduxjs_toolkit\"), __webpack_require__.e(\"webpack_sharing_consume_default_react-redux_react-redux\"), __webpack_require__.e(\"webpack_sharing_consume_default_react-dom_react-dom\"), __webpack_require__.e(\"webpack_container_remote_fomcapp_Loader\"), __webpack_require__.e(\"src_bootstrap_js\")]).then(__webpack_require__.bind(__webpack_require__, /*! ./bootstrap */ \"./src/bootstrap.js\"));\n\n//# sourceURL=webpack://fomc-tasks/./src/index.js?");
-
-/***/ }),
-
-/***/ "webpack/container/reference/fomcapp":
-/*!**************************!*\
-  !*** external "fomcapp" ***!
-  \**************************/
-/***/ ((module) => {
-
-"use strict";
-eval("module.exports = fomcapp;\n\n//# sourceURL=webpack://fomc-tasks/external_%22fomcapp%22?");
+eval("Promise.all(/*! import() */[__webpack_require__.e(\"webpack_sharing_consume_default_react_react\"), __webpack_require__.e(\"webpack_sharing_consume_default_reduxjs_toolkit_reduxjs_toolkit\"), __webpack_require__.e(\"webpack_sharing_consume_default_react-redux_react-redux\"), __webpack_require__.e(\"webpack_sharing_consume_default_react-dom_react-dom\"), __webpack_require__.e(\"src_bootstrap_js\")]).then(__webpack_require__.bind(__webpack_require__, /*! ./bootstrap */ \"./src/bootstrap.js\"));\n\n//# sourceURL=webpack://fomc-tasks/./src/index.js?");
 
 /***/ }),
 
@@ -174,7 +163,7 @@ eval("module.exports = tasks;\n\n//# sourceURL=webpack://fomc-tasks/external_%22
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => "fe228bd1d827773f1ed8"
+/******/ 		__webpack_require__.h = () => "d10c92fc9c66369b7ffd"
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
@@ -269,9 +258,6 @@ eval("module.exports = tasks;\n\n//# sourceURL=webpack://fomc-tasks/external_%22
 /******/ 	/* webpack/runtime/remotes loading */
 /******/ 	(() => {
 /******/ 		var chunkMapping = {
-/******/ 			"webpack_container_remote_fomcapp_Loader": [
-/******/ 				"webpack/container/remote/fomcapp/Loader"
-/******/ 			],
 /******/ 			"webpack_container_remote_tasks_Table": [
 /******/ 				"webpack/container/remote/tasks/Table"
 /******/ 			],
@@ -280,11 +266,6 @@ eval("module.exports = tasks;\n\n//# sourceURL=webpack://fomc-tasks/external_%22
 /******/ 			]
 /******/ 		};
 /******/ 		var idToExternalAndNameMapping = {
-/******/ 			"webpack/container/remote/fomcapp/Loader": [
-/******/ 				"default",
-/******/ 				"./Loader",
-/******/ 				"webpack/container/reference/fomcapp"
-/******/ 			],
 /******/ 			"webpack/container/remote/tasks/Table": [
 /******/ 				"default",
 /******/ 				"./Table",
@@ -384,7 +365,6 @@ eval("module.exports = tasks;\n\n//# sourceURL=webpack://fomc-tasks/external_%22
 /******/ 					register("react-dom", "17.0.1", () => Promise.all([__webpack_require__.e("vendors-node_modules_react-dom_index_js"), __webpack_require__.e("webpack_sharing_consume_default_react_react")]).then(() => () => __webpack_require__(/*! ./node_modules/react-dom/index.js */ "./node_modules/react-dom/index.js")));
 /******/ 					register("react-redux", "7.2.2", () => Promise.all([__webpack_require__.e("vendors-node_modules_redux_es_redux_js"), __webpack_require__.e("vendors-node_modules_react-redux_es_index_js"), __webpack_require__.e("webpack_sharing_consume_default_react_react"), __webpack_require__.e("webpack_sharing_consume_default_react-dom_react-dom")]).then(() => () => __webpack_require__(/*! ./node_modules/react-redux/es/index.js */ "./node_modules/react-redux/es/index.js")));
 /******/ 					register("react", "17.0.1", () => __webpack_require__.e("vendors-node_modules_react_index_js").then(() => () => __webpack_require__(/*! ./node_modules/react/index.js */ "./node_modules/react/index.js")));
-/******/ 					initExternal("webpack/container/reference/fomcapp");
 /******/ 					initExternal("webpack/container/reference/tasks");
 /******/ 				}
 /******/ 				break;

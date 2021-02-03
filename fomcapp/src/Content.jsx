@@ -2,8 +2,8 @@ import React from 'react';
 import { Switch, Route } from "react-router-dom";
 // import OrdersSearch from 'orders/OrdersSearch'
 
-const Dashboard = React.lazy(() => import('fomcapp/Dashboard'));
-const CustomersSearch = React.lazy(() => import('customers/CustomersSearch'));
+// const Dashboard = React.lazy(() => import('fomcapp/Dashboard'));
+// const CustomersSearch = React.lazy(() => import('customers/CustomersSearch'));
 const OrdersSearch = React.lazy(() => import('orders/OrdersSearch'));
 const TasksSearch = React.lazy(() => import('tasks/TasksSearch'));
 
@@ -14,10 +14,10 @@ const Content = ({ domain }) => {
     <div className={`FOMC-content-${domain}`}>
       <Switch>
           <Route path="/" exact>
-            <Dashboard />
+            {/* <Dashboard /> */}
           </Route>
           <Route path="/customers">
-            <CustomersSearch />
+            {/* <CustomersSearch /> */}
           </Route>
           <Route path="/orders">
             <OrdersSearch />

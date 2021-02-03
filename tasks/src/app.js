@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react';
 import { Provider } from 'react-redux';
-import Loader from 'fomcapp/Loader';
+// import Loader from 'fomcapp/Loader';
 import store from './store/store';
 import TableContainer from './tableContainer'
 // import TableActions from './tableActions';
@@ -15,7 +15,7 @@ import TableContainer from './tableContainer'
 
 const App = ({ title }) =>
 <Provider store={store}>
-  <Suspense fallback={<Loader />}>
+  <Suspense fallback={<div>loading...</div>}>
     <div>
       {/* <FomcHeader /> */}
       {/* <FomcSidebar /> */}

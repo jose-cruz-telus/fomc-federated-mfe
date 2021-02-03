@@ -37,7 +37,7 @@ module.exports = {
       filename: 'remoteEntry.js',
       remotes: {
         fomcapp: "fomcapp",
-        customers: "customers",
+        // customers: "customers",
         orders: "orders",
         tasks: "tasks",
       },

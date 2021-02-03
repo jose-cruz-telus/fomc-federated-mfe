@@ -59,15 +59,7 @@ module.exports = {
         }
       }
     }),
-    new DashboardPlugin({
-      dashboardURL: "http://localhost:8000/api/update",
-      // metadata: {
-      //   source: {
-      //     url: "http://github.com",
-      //   },
-      //   remote: "http://localhost:3000/remoteEntry.js",
-      // },
-    }),
+
   ],
   devServer: {
     contentBase: path.resolve(__dirname, './dist'),

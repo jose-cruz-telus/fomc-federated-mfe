@@ -1,6 +1,6 @@
 import React, { Suspense,  } from 'react';
 import { BrowserRouter as Router } from "react-router-dom";
-import Loader from 'fomcapp/Loader';
+// import Loader from 'fomcapp/Loader';
 import FomcHeader from './Header.jsx';
 import FomcSidebar from './Sidebar.jsx';
 import FomcContent from './Content.jsx';
@@ -22,7 +22,7 @@ const App = ({ title }) => {
 
   return (
     <Router>
-      <Suspense fallback={<Loader />}>
+      <Suspense fallback={<div>loading..</div>}>
         <FomcHeader />
         <FomcSidebar />
         <FomcContent />

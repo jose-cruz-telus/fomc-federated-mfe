@@ -36,10 +36,10 @@ module.exports = {
       library: { type: 'var', name: 'fomcapp' },
       filename: 'remoteEntry.js',
       remotes: {
-        fomcapp: "fomcapphttp://localhost:3003/remoteEntry.js",
-        customers: "customers@http://localhost:3000/remoteEntry.js",
-        orders: "orders@http://localhost:3001/remoteEntry.js",
-        tasks: "tasks@http://localhost:3002/remoteEntry.js",
+        fomcapp: "fomcapp",
+        // customers: "customers",
+        orders: "orders",
+        tasks: "tasks",
       },
       exposes: {
         // "./Header": "./src/Header.jsx",
